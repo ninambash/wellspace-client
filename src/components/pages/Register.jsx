@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import axios from 'axios'
 import jwt_decode from 'jwt-decode'
-import { useNavigate } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
+
+import 'bulma/css/bulma.min.css'
+import { Link } from 'react-router-dom'
 
 export default function Register({ currentUser, setCurrentUser }) {
 	// state for the controlled form
@@ -9,8 +12,6 @@ export default function Register({ currentUser, setCurrentUser }) {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const [msg, setMsg] = useState('')
-
-	const navigate = useNavigate()
 
 	// submit event handler
 	const handleSubmit = async e => {
@@ -44,45 +45,66 @@ export default function Register({ currentUser, setCurrentUser }) {
 
 	// conditionally render a navigate component
 	if (currentUser) {
-		navigate("/profile")
+		return <Navigate to="/" />
 	}
 
 	return (
-		<div>
-			<h1>Register for an account:</h1>
+		<div className='background-color'>
+			<div class="columns is-centered">
+        <div class = "column is-5">
+                <div class = "box">
+			<h2 class="title">Register for an account</h2>
 
 			<p>{msg}</p>
 
 			<form onSubmit={handleSubmit}>
-				<label htmlFor='name'>Name:</label>
+			<div class="field">
+				<label class="label" htmlFor='name'>Name:</label>
 				<input 
+					class="input is-medium"
 					type="text"
 					id="name"
 					placeholder='your username...'
 					onChange={e => setName(e.target.value)}
 					value={name}
 				/>
-
-				<label htmlFor='email'>Email:</label>
+			</div>
+			<div class="field">
+				<label class="label" htmlFor='email'>Email:</label>
 				<input 
+					class="input is-medium"
 					type="email"
 					id="email"
 					placeholder='your email...'
 					onChange={e => setEmail(e.target.value)}
 					value={email}
 				/>
-
-				<label htmlFor='password'>Password:</label>
+			</div>
+			<div class="field">
+				<label class="label" htmlFor='password'>Password:</label>
 				<input 
+					class="input is-medium"
 					type="password"
 					id="password"
 					placeholder='password...'
 					onChange={e => setPassword(e.target.value)}
 					value={password}
 				/>
-
-				<button type="submit">Register</button>
+			</div>
+				<button class="button is-medium is-dark m-1" type="submit">Register</button>
+				<Link to={'/'}>
+     				 <button class="button is-medium is-dark m-1">
+        				Cancel
+     				 </button>
+      			</Link>
 			</form>
 		</div>
+		</div>
+		</div>
+		
+
+
+		</div>
+        
 	)
 }

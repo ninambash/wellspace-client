@@ -1,0 +1,72 @@
+.cards {
+    /* border: 2px solid green; */
+    display: grid;
+    margin: 0 auto;
+    margin-top: 50px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 't1 t2 t3 t4';
+    grid-gap: '10';
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  
+  #cardtext1 {
+      /* border: 2px solid green; */
+      margin-left: 20px;
+      margin-right: 20px;
+      grid-area: t1;
+      background-color: rgba(46,64,82,0.5)
+  }
+  #cardtext2 {
+      margin-left: 20px;
+      margin-right: 20px;
+      grid-area: t2;
+      background-color: rgba(46,64,82,0.5)
+  }
+  #cardtext3 {
+      grid-area: t3;
+      margin-left: 20px;
+      margin-right: 20px;
+      background-color: rgba(46,64,82,0.5)
+  }
+  #cardtext4 {
+      grid-area: t4;
+      margin-left: 20px;
+      margin-right: 20px;
+      background-color: rgba(46,64,82,0.5)
+  }
+  
+  #articlestext1 {
+      margin-left: 20px;
+      margin-right: 20px;
+      grid-area: t1;
+      background-color: rgba(123, 156, 189, 0.5)
+  }
+  #articlestext2 {
+      margin-left: 20px;
+      margin-right: 20px;
+      grid-area: t1;
+      background-color: rgba(46,64,82,0.5)
+  }
+  #articlestext3 {
+      margin-left: 20px;
+      margin-right: 20px;
+      grid-area: t1;
+      background-color: rgba(46,64,82,0.5)
+  }
+  #articlestext4 {
+      margin-left: 20px;
+      margin-right: 20px;
+      grid-area: t1;
+      background-color: rgba(46,64,82,0.5)
+  }
+  
+  .img {
+      margin-left: 120px;
+      margin-right: 120px;
+  }
+  
+  .margin {
+      margin-left: 60%;
+      margin-bottom: 5px;
+  }   
